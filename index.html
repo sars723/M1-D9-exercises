@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container-76-cells {
+            width: 798px;
+            display:flex;
+            flex-wrap: wrap;
+          
+
+           
+            
+        }
+        .cell {
+            width:40px;
+            height:40px;
+            border:1px solid black;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container-76-cells">
+
+    </div>
+
+    <!--
+            BINGO CHALLENGE!!!
+            Create programmatically (with JS) a BINGO board with 76 cells, from 1 to 76.
+            Create a button to randomize a number from 1 to 76. The same number should be highlighted on the bingo board
+    
+            EXTRA: 
+            - Take ALWAYS a new number (eg. avoid randoming the number 10 3 times)
+            - Create a USER BOARD with 24 randomized numbers that highlights as the main board does
+            - Let the user choose HOW MANY user boards he's willing to play with and create them.
+        -->
+    <script>
+
+
+
+        const parediv = document.getElementById("container-76-cells")
+     
+
+
+
+        for (let i = 0; i < 76; i++) {
+           // const parediv = document.getElementById("container-76-cells")
+            // const cells = document.querySelectorAll("div .allCells")
+            // let numGenerated = Math.floor(1 + Math.random() * 76)
+            // cells[i].innerHTML = numGenerated;
+            // cells[i].style.border = "1px solid black"   const cells = document.createElement("div")
+        const cell = document.createElement('div')
+            cell.classList.add("cell");
+            cell.innerText = i+1
+        parediv.appendChild(cell)
+
+
+        }
+        const btn=document.createElement("button")
+        btn.innerText="randomize 1 to 76  "
+        parediv.appendChild(btn)
+        let numGenerated 
+       const cel=document.getElementsByClassName("cell") 
+       
+       const bt=document.querySelector("button") 
+       
+        bt.onclick = function(){
+         for (let i = 0; i < 76; i++) {
+            numGenerated = Math.floor(1 + Math.random() * 75)
+            //console.log(numGenerated)
+            if(cel[i].innerText===numGenerated)
+            cel[i].style.backgroundColor="green"
+        
+                }
+
+        };
+
+        /*
+           const parediv=document.getElementById("container-76-cells")
+            const cells=document.querySelectorAll("div .allCells")
+            
+        
+        for(let j=0;j<76;j++)
+        {
+            if(cells[i].innerHTML===cells[i+1].innerHTML)
+            cells[i].style.backgroundColor="green"
+        
+        
+        }
+         */
+    </script>
+
+
+
+
+
+</body>
+
+</html>
